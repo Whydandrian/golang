@@ -2,18 +2,14 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func main()  {
-	// fmt.Println("Hi.. I'm Wahyudi Andrian")
-	// fmt.Println("I'm from Lumajang, East Java")
+	var x, y []int
 
-	var s string
-	sep := ""
-	for _, arg := range os.Args[1:] {
-		s += sep + arg
-		sep = " "
+	for i := 0; i < 10; i++ {
+		y = append(x, i)
+		fmt.Printf("%d cap=%d\t%v\n", i,cap(y), y)
+		x = y
 	}
-	fmt.Println((s))
 }
