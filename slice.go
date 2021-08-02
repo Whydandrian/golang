@@ -22,4 +22,7 @@ func main()  {
 	fmt.Println(slice1)
 	fmt.Println(len(slice1))
 	fmt.Println(cap(slice1))
+	
+	months[5] = "data array diubah"
+	fmt.Println(slice1)
 }
