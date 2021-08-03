@@ -9,4 +9,12 @@ func main() {
 		fmt.Println("Perulangan ke ", counter)
 		counter++
 	}
+
+	// For range with slice
+	slice := []string{"wahyudi", "andrian","ganteng"}
+
+	for i := 0; i < len(slice); i++ {
+		fmt.Println(slice[i])
+	}
+
 }
