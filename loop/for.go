@@ -21,4 +21,13 @@ func main() {
 		fmt.Println("Index ke ", i, "= ", value)
 	}
 
+	// jika kita ingin menampilkan data value saja
+	// untuk index yang dideklarasikan bisa diubah
+	// atau diganti dengan simbol underscore _
+	// karena jika variable tidak di pakai di golang
+	// akan terdeteksi error
+	for _, value := range slice {
+		fmt.Println(value)
+	}
+
 }
