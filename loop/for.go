@@ -30,4 +30,12 @@ func main() {
 		fmt.Println(value)
 	}
 
+	person := make(map[string]string)
+
+	person["name"] = "Wahyudi"
+	person["role"] = "Software Dev."
+
+	for key, value := range person{
+		fmt.Println(key, "=", value)
+	}
 }
