@@ -34,8 +34,8 @@ func main() {
 
 	person["name"] = "Wahyudi"
 	person["role"] = "Software Dev."
-
+	
 	for key, value := range person{
 		fmt.Println(key, "=", value)
 	}
-}
+}	
