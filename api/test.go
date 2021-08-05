@@ -1,21 +1,51 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
-	"io/ioutil"
+    "encoding/json"
+    "fmt"
+    "io/ioutil"
+    "log"
+    "net/http"
+    "os"
 )
 
+// A Response struct to map the Entire Response
+type Response struct {
+    Name    string    `json:"name"`
+    Pokemon []Pokemon `json:"pokemon_entries"`
+}
+
+// A Pokemon Struct to map every pokemon to.
+type Pokemon struct {
+    EntryNo int            `json:"entry_number"`
+    Species PokemonSpecies `json:"pokemon_species"`
+}
+
+// A struct to map our Pokemon's Species which includes it's name
+type PokemonSpecies struct {
+    Name string `json:"name"`
+}
+
 func main() {
-	url := "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=libra&day=today"
-	req, _ := http.NewRequest("POST", url, nil)
+    response, err := http.Get("http://pokeapi.co/api/v2/pokedex/kanto/")
+    if err != nil {
+        fmt.Print(err.Error())
+        os.Exit(1)
+    }
 
-	req.Header.Add("x-rapidapi-key", "ed5f837f73msh394956de50910e0p1908e5jsn80aa43a20b2c")
-	req.Header.Add("x-rapidapi-host", "sameer-kumar-aztro-v1.p.rapidapi.com")
+    responseData, err := ioutil.ReadAll(response.Body)
+    if err != nil {
+        log.Fatal(err)
+    }
 
-	res, _ := http.DefaultClient.Do(req)
-	body, _ := ioutil.ReadAll(res.Body)
+    var responseObject Response
+    json.Unmarshal(responseData, &responseObject)
 
-	fmt.Println(string(body))
+    fmt.Println("DAERAH => ", responseObject.Name)
+    fmt.Println("KODE POKEMON => ", len(responseObject.Pokemon))
+
+    for i := 0; i < len(responseObject.Pokemon); i++ {
+        fmt.Println("NAMA POKEMON => ", responseObject.Pokemon[i].Species.Name)
+    }
 
 }
