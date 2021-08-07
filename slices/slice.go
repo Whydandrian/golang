@@ -15,15 +15,15 @@ func main() {
 	// fmt.Println(likedVegetables)
 
 	// Memecah string dan menambahkan per string ke dalam array
-	var runes []rune
-	for _, r := range "Hi, Wahyudi" {
-		runes = append(runes, r)
-	}
-	fmt.Printf("%q\n", runes)
+	// var runes []rune
+	// for _, r := range "Hi, Wahyudi" {
+	// 	runes = append(runes, r)
+	// }
+	// fmt.Printf("%q\n", runes)
 
-	a := make([]int, 5)
-	// make([array]tuipe data, panjang_slice, kapasitas_slice)
-	b := make([]int, 7, 5)
+	// a := make([]int, 5)
+	// // make([array]tuipe data, panjang_slice, kapasitas_slice)
+	// b := make([]int, 7, 5)
 
 	// var x, y []int
 	// for i := 0; i < 10; i++ {
