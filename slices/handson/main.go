@@ -10,7 +10,7 @@ func main() {
 	// print primes
 fmt.Println(primes)
 // print primes dari data ke 3 sampai 5
-fmt.Println(primes[3:5])
+fmt.Println(primes[2:5])
 
 
 }

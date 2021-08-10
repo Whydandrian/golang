@@ -22,7 +22,7 @@ func main() {
 	// fmt.Printf("%q\n", runes)
 
 	// a := make([]int, 5)
-	// // make([array]tuipe data, panjang_slice, kapasitas_slice)
+	// make([array]tuipe data, panjang_slice, kapasitas_slice)
 	// b := make([]int, 7, 5)
 
 	// var x, y []int
