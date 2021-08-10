@@ -16,7 +16,7 @@ func main() {
 	printSlice("b", b)
 
 	// Buat variabel c dengan dua data awal a
-	c := a[0:1]
+	c := a[:2]
 	printSlice("c", c)
 	
 	// Buat variabel d dengan data ke 2 sampai 4 variabel b
