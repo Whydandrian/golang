@@ -8,6 +8,10 @@ type Customer struct {
 	Married bool
 }
 
+func (customer Customer) sayHi(name string) {
+	fmt.Println("Hi ", name, "My name is ", customer.Name)
+}
+
 func main() {
 	var wahyudi Customer
 
@@ -15,16 +19,18 @@ func main() {
 	wahyudi.Address = "Lumajang"
 	wahyudi.Age = 24
 
-	fmt.Println(wahyudi.Name)
-	fmt.Println(wahyudi.Address)
-	fmt.Println(wahyudi.Age)
+	wahyudi.sayHi("admin")
 
-	whyd := Customer {
-		Name: "whydandrian",
-		Address: "Lumajang-Jatim",
-		Age: 24,
-	}
-	fmt.Println(whyd)
+	// fmt.Println(wahyudi.Name)
+	// fmt.Println(wahyudi.Address)
+	// fmt.Println(wahyudi.Age)
+
+	// whyd := Customer {
+	// 	Name: "whydandrian",
+	// 	Address: "Lumajang-Jatim",
+	// 	Age: 24,
+	// }
+	// fmt.Println(whyd)
 	// kode di bawah ini akan error karena deklarasi value tidak sesuai dg
 	// urutan field struct Customer
 	// yudi := Customer{"Yuyud", "magelang", 22}
