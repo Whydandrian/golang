@@ -1,3 +1,3 @@
-module testing
+module golang
 
 go 1.16
